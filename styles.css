@@ -4,8 +4,18 @@
 *** website: https://katherineadjahoe.com
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+:root {
+    --transparentBlack: rgb(0, 0, 0, .5);
+    --transparentWhite: rgb(255, 255, 255, .5);
+    --textWhite: #ffffff;
+    --orangeColor: #ff5d00;
+    --fontFamily: 'Noto Sans', sans-serif;
+}
+
 body {
     margin: 0;
+    font-family: var(--fontFamily);
 }
 
 .carousel {
@@ -14,6 +24,39 @@ body {
     height: 100%;
     overflow: hidden;
     position: relative;
+}
+
+.carousel .overlay {
+    background-color: var(--transparentBlack);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.carousel .overlay .reference {
+    color: var(--textWhite);
+    font-size: 12px;
+    line-height: 1.5;
+    font-family: var(--fontFamily);
+    position: absolute;
+    width: 100%;
+    top: 90%;
+    padding: 0 80px;
+    transform: translateY(-90%);
+}
+
+.carousel .overlay .reference hr {
+    border-color: var(--orangeColor);
+    width: 100px;
+    top: 90%;
+    margin: 20px 0;
+    transform: translateY(-90%);
+}
+
+.carousel .overlay .reference a {
+    color: var(--textWhite);
 }
 
 .carousel .carousel-item,
@@ -44,13 +87,13 @@ body {
 .carousel .carousel-actions button {
     border-radius: 50%;
     border: 0;
-    background-color: rgb(255, 255, 255, .5);
+    background-color: var(--transparentWhite);
     width: 50px;
     height: 50px;
     font-size: 28px;
     font-weight: 400;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--textWhite);
 }
 
 .carousel .carousel-actions button#carousel-button-prev {
